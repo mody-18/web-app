@@ -254,11 +254,28 @@ section h2 {
   gap: 22px;
 }
 .service {
-  background: var(--card);
-  padding: 26px;
-  border-radius: 14px;
-  text-align: center;
-  border: 1px solid var(--line);
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.service:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.service h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.25em;
+  font-weight: 600;
+}
+
+.service .price {
+  font-weight: 600;
+  margin-bottom: 0.75em;
+  color: var(--brand, #444);
 }
 
 .about {
@@ -285,11 +302,30 @@ section h2 {
 }
 .price-card {
   background: #fff;
-  padding: 24px;
-  border-radius: 14px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   text-align: center;
-  border: 1px solid var(--line);
 }
+
+.price-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.price-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.25em;
+  font-weight: 600;
+}
+
+.price-card .price {
+  font-weight: 600;
+  margin-bottom: 0.75em;
+  color: var(--brand, #444);
+}
+
 .price-card.featured {
   border-color: var(--brand);
   box-shadow: 0 6px 20px rgba(212, 163, 115, 0.15);
