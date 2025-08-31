@@ -229,6 +229,19 @@ img {
   color: var(--ink);
 }
 
+.translate-btn {
+  margin-top: 8px;
+  border: 1px solid var(--line);
+  background: #fff;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font: inherit;
+  cursor: pointer;
+}
+.translate-btn:hover {
+  background: #f7f7f7;
+}
+
 /* Sections */
 section:not(.hero) {
   padding: clamp(56px, 8vw, 88px) clamp(16px, 4vw, 64px);
