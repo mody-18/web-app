@@ -2,105 +2,167 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Massage Therapist</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
-      <div class="logo">Therapist</div>
-      <nav>
+    <!-- Header / Overlay Nav (transparent over hero, solid on scroll) -->
+    <header class="site-header" data-solid="false">
+      <a href="#" class="logo">Layana‑style</a>
+
+      <!-- Desktop Nav -->
+      <nav class="nav-links" aria-label="Main">
         <a href="#services">Services</a>
         <a href="#about">About</a>
         <a href="#pricing">Pricing</a>
-        <a href="#contact">Contact</a>
+        <a href="#contact" class="link-btn">Book</a>
+      </nav>
+
+      <!-- Mobile Toggle -->
+      <button
+        class="nav-toggle"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+        aria-label="Open menu"
+      >
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <!-- Mobile Menu -->
+      <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact" class="link-btn">Book</a>
       </nav>
     </header>
 
-    <section class="hero">
+    <!-- Hero (full screen, centered copy, simple slider) -->
+    <section class="hero" data-index="0">
+      <div class="hero-overlay"></div>
+      <div class="hero-slides">
+        <!-- Replace image URLs with your own. Keep 1–3 slides. -->
+        <div class="slide active" style="--bg: url('hero-1.jpg')"></div>
+        <div class="slide" style="--bg: url('hero-2.jpg')"></div>
+        <div class="slide" style="--bg: url('hero-3.jpg')"></div>
+      </div>
+
       <div class="hero-content">
-        <h1>Your Wellness in Your Control</h1>
+        <h1>Grounded massage for busy minds</h1>
         <p>
-          Professional massage therapy to relax, restore, and renew your body
-          and mind.
+          Evidence‑informed treatments in <strong>Your Area</strong>. Unwind,
+          release tension, and feel at home in your body again.
         </p>
-        <a href="#contact" class="btn">Book Now</a>
+        <a href="#contact" class="btn">Book an appointment</a>
       </div>
+
+      <!-- Scroll cue -->
+      <a href="#services" class="scroll-cue" aria-label="Scroll to services"
+        >▾</a
+      >
     </section>
 
+    <!-- Services -->
     <section id="services">
-      <h2>Our Services</h2>
+      <h2>Services</h2>
+      <p class="section-intro">
+        Tailored bodywork to help you relax, move freely, and recover well.
+      </p>
       <div class="services-grid">
-        <div class="service">
-          <h3>Swedish Massage</h3>
-          <p>Relaxing full-body treatment.</p>
-        </div>
-        <div class="service">
-          <h3>Deep Tissue</h3>
-          <p>Focused relief for muscle tension.</p>
-        </div>
-        <div class="service">
-          <h3>Sports Massage</h3>
-          <p>Improve mobility & performance.</p>
-        </div>
+        <article class="service">
+          <h3>Clinical / Deep Tissue</h3>
+          <p>Targeted work for neck, shoulders, and lower back tension.</p>
+        </article>
+        <article class="service">
+          <h3>Relaxation</h3>
+          <p>Full‑body massage to downshift your nervous system.</p>
+        </article>
+        <article class="service">
+          <h3>Sports Recovery</h3>
+          <p>Pre/post‑event support and mobility tune‑ups.</p>
+        </article>
       </div>
     </section>
 
+    <!-- About -->
     <section id="about">
-      <h2>About Us</h2>
+      <h2>About</h2>
       <div class="about">
-        <img src="about.jpg" alt="Massage therapist at work" />
+        <img src="about.jpg" alt="Calm massage studio" />
         <div class="about-text">
           <p>
-            With over 10 years of experience, we specialize in delivering
-            tailored massage therapies designed to meet your needs. Whether
-            you're recovering from injury, seeking stress relief, or improving
-            mobility, our goal is to restore balance and vitality.
+            Hi, I’m <strong>Your Name</strong> (MTI, ITEC). I combine clinical
+            know‑how with a gentle, person‑centred approach. Every session
+            begins with a quick check‑in so we can tailor pressure, focus areas,
+            and aftercare.
           </p>
+          <ul class="ticks">
+            <li>Licensed & insured</li>
+            <li>Accessible studio with step‑free entry</li>
+            <li>Receipts for insurance reimbursement</li>
+          </ul>
         </div>
       </div>
     </section>
 
+    <!-- Pricing -->
     <section id="pricing">
       <h2>Pricing</h2>
       <div class="pricing-grid">
         <div class="price-card">
           <h3>30 min</h3>
-          <p>£40</p>
-          <p>Quick relief session.</p>
+          <p class="price">£40</p>
+          <p>Quick relief for one or two focus areas.</p>
         </div>
-        <div class="price-card">
+        <div class="price-card featured">
           <h3>60 min</h3>
-          <p>£70</p>
-          <p>Full-body relaxation.</p>
+          <p class="price">£70</p>
+          <p>Most popular — full‑body or targeted treatment.</p>
         </div>
         <div class="price-card">
           <h3>90 min</h3>
-          <p>£95</p>
-          <p>Extended deep relaxation.</p>
+          <p class="price">£95</p>
+          <p>Deeper reset with extra time for back & hips.</p>
         </div>
       </div>
+      <p class="small center">Gift cards available · All prices include VAT</p>
     </section>
 
+    <!-- Contact -->
     <section id="contact" class="contact">
-      <h2>Contact Us</h2>
-      <p>Get in touch or book your appointment.</p>
+      <h2>Contact</h2>
+      <p class="section-intro">
+        Questions before booking? Send a message and I’ll get right back to you.
+      </p>
       <form>
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea rows="5" placeholder="Your Message"></textarea>
+        <label class="sr-only" for="name">Name</label>
+        <input id="name" type="text" placeholder="Your Name" required />
+
+        <label class="sr-only" for="email">Email</label>
+        <input id="email" type="email" placeholder="Your Email" required />
+
+        <label class="sr-only" for="message">Message</label>
+        <textarea id="message" rows="5" placeholder="Your Message"></textarea>
         <button type="submit">Send</button>
       </form>
+      <address class="address">
+        123 Sample Street, London · Mon–Fri 9–6 · 01234 567890
+      </address>
     </section>
 
     <footer>
       <p>&copy; 2025 Massage Therapist. All Rights Reserved.</p>
     </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>
