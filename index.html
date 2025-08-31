@@ -229,17 +229,48 @@
       <p class="section-intro">
         Questions before booking? Send a message and I’ll get right back to you.
       </p>
-      <form>
+
+      <form
+        action="https://formsubmit.co/modestas.riabovas2@gmail.com"
+        method="POST"
+      >
+        <!-- FormSubmit options -->
+        <input type="hidden" name="_subject" value="New website enquiry" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+        <!-- After submit, send user to a thank-you page (create it below) -->
+        <input type="hidden" name="_next" value="thank-you.html" />
+
         <label class="sr-only" for="name">Name</label>
-        <input id="name" type="text" placeholder="Your Name" required />
+        <input
+          id="name"
+          name="name"
+          type="text"
+          placeholder="Your Name"
+          required
+        />
 
         <label class="sr-only" for="email">Email</label>
-        <input id="email" type="email" placeholder="Your Email" required />
+        <input
+          id="email"
+          name="email"
+          type="email"
+          placeholder="Your Email"
+          required
+        />
 
         <label class="sr-only" for="message">Message</label>
-        <textarea id="message" rows="5" placeholder="Your Message"></textarea>
+        <textarea
+          id="message"
+          name="message"
+          rows="5"
+          placeholder="Your Message"
+          required
+        ></textarea>
+
         <button type="submit">Send</button>
       </form>
+
       <address class="address">
         123 Sample Street, London · Mon–Fri 9–6 · 01234 567890
       </address>
