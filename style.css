@@ -300,6 +300,23 @@ section h2 {
   margin: 6px 0 8px;
 }
 
+/* NEW */
+.services-grid,
+.pricing-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 320px));
+  justify-content: center; /* center the column track group */
+}
+
+/* Keep cards a consistent width and centered content */
+.service,
+.price-card {
+  width: 100%;
+  max-width: 320px;
+  text-align: center;
+}
+
+/* NEW */
+
 .contact {
   text-align: center;
 }
@@ -350,3 +367,21 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
+/* NEW BUTTON */
+
+.see-more {
+  display: block;
+  margin: 20px auto 0;
+  padding: 10px 20px;
+  background: var(--brand);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.see-more:hover {
+  filter: brightness(0.95);
+}
+
+/* NEW BUTTON */

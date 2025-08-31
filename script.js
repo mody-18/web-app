@@ -47,3 +47,13 @@ window.addEventListener("keydown", (e) => {
   if (e.key === "ArrowRight") next();
   if (e.key === "ArrowLeft") prev();
 });
+
+document.querySelectorAll(".see-more").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const target = document.getElementById(btn.dataset.target);
+    target.classList.toggle("show-all");
+    btn.textContent = target.classList.contains("show-all")
+      ? "See less"
+      : "See more";
+  });
+});
