@@ -1,3 +1,10 @@
+/* Global fixes */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
 * {
   box-sizing: border-box;
 }
@@ -8,20 +15,11 @@
   --card: #f7f7f7;
   --line: #e5e7eb;
 }
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-}
-
 html {
   scroll-behavior: smooth;
 }
 body {
-  margin: 0;
-  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  font-family: "Inter", sans-serif;
   color: var(--ink);
   line-height: 1.65;
 }
@@ -58,8 +56,9 @@ img {
   z-index: 1000;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 clamp(16px, 4vw, 60px);
+  justify-content: center;
+  gap: 40px;
+  padding: 0 20px;
   color: #fff;
   background: rgba(0, 0, 0, 0.18);
   backdrop-filter: saturate(140%) blur(4px);
@@ -101,7 +100,8 @@ img {
   cursor: pointer;
   width: 44px;
   height: 34px;
-  position: relative;
+  position: absolute;
+  right: 20px;
 }
 .nav-toggle .bar {
   position: absolute;
@@ -146,30 +146,7 @@ img {
   transform: translateX(0);
 }
 
-/* Floating social column */
-.social {
-  position: fixed;
-  left: 18px;
-  bottom: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  z-index: 900;
-}
-.social a {
-  color: #fff;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 8px 10px;
-  border-radius: 999px;
-  font-size: 12px;
-  text-decoration: none;
-  letter-spacing: 0.5px;
-}
-
 /* Hero */
-
-/* NEW */
-
 .hero {
   position: relative;
   height: 100vh;
@@ -185,7 +162,7 @@ img {
 }
 .hero-overlay {
   position: absolute;
-  inset: 0; /* fills hero, no overshoot */
+  inset: 0;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45));
   z-index: 0;
 }
@@ -240,10 +217,20 @@ img {
   font-size: 28px;
 }
 
-/* NEW */
+/* Testimonials */
+
+#testimonials .service {
+  font-style: italic;
+}
+#testimonials strong {
+  display: block;
+  margin-top: 12px;
+  font-style: normal;
+  color: var(--ink);
+}
 
 /* Sections */
-section {
+section:not(.hero) {
   padding: clamp(56px, 8vw, 88px) clamp(16px, 4vw, 64px);
   max-width: 1200px;
   margin: auto;
@@ -273,10 +260,6 @@ section h2 {
   text-align: center;
   border: 1px solid var(--line);
 }
-.service h3 {
-  margin: 0 0 8px;
-  font-weight: 600;
-}
 
 .about {
   display: grid;
@@ -293,9 +276,6 @@ section h2 {
 .ticks {
   margin: 16px 0 0;
   padding: 0 0 0 18px;
-}
-.ticks li {
-  margin: 6px 0;
 }
 
 .pricing-grid {
@@ -368,9 +348,5 @@ footer {
   }
   .about {
     grid-template-columns: 1fr;
-  }
-  .social {
-    left: 12px;
-    bottom: 16px;
   }
 }
