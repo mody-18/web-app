@@ -11,21 +11,67 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", setHeaderState, { passive: true });
 
   // Mobile nav toggle
+  // const toggle = document.querySelector(".nav-toggle");
+  // const mobileMenu = document.getElementById("mobile-menu");
+  // if (toggle && mobileMenu) {
+  //   toggle.addEventListener("click", () => {
+  //     const open = mobileMenu.classList.toggle("open");
+  //     toggle.setAttribute("aria-expanded", open);
+  //     document.body.classList.toggle("no-scroll", open);
+  //   });
+  //   mobileMenu.querySelectorAll("a").forEach((a) =>
+  //     a.addEventListener("click", () => {
+  //       mobileMenu.classList.remove("open");
+  //       toggle.setAttribute("aria-expanded", "false");
+  //       document.body.classList.remove("no-scroll");
+  //     })
+  //   );
+  // }
+
+  // Mobile nav + overlay
   const toggle = document.querySelector(".nav-toggle");
   const mobileMenu = document.getElementById("mobile-menu");
+
   if (toggle && mobileMenu) {
+    // create overlay once
+    const overlay = document.createElement("div");
+    overlay.className = "menu-overlay";
+    document.body.appendChild(overlay);
+
+    const openMenu = () => {
+      mobileMenu.classList.add("open");
+      overlay.classList.add("open");
+      toggle.setAttribute("aria-expanded", "true");
+      document.body.classList.add("no-scroll");
+    };
+    const closeMenu = () => {
+      mobileMenu.classList.remove("open");
+      overlay.classList.remove("open");
+      toggle.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("no-scroll");
+    };
+
     toggle.addEventListener("click", () => {
-      const open = mobileMenu.classList.toggle("open");
-      toggle.setAttribute("aria-expanded", open);
-      document.body.classList.toggle("no-scroll", open);
+      const isOpen = mobileMenu.classList.toggle("open");
+      overlay.classList.toggle("open", isOpen);
+      toggle.setAttribute("aria-expanded", String(isOpen));
+      document.body.classList.toggle("no-scroll", isOpen);
     });
-    mobileMenu.querySelectorAll("a").forEach((a) =>
-      a.addEventListener("click", () => {
-        mobileMenu.classList.remove("open");
-        toggle.setAttribute("aria-expanded", "false");
-        document.body.classList.remove("no-scroll");
-      })
-    );
+
+    // close on any menu link tap
+    mobileMenu
+      .querySelectorAll("a")
+      .forEach((a) => a.addEventListener("click", closeMenu));
+
+    // close when tapping outside (the overlay)
+    overlay.addEventListener("click", closeMenu);
+
+    // close with Escape key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && mobileMenu.classList.contains("open")) {
+        closeMenu();
+      }
+    });
   }
 
   // Minimal hero slider

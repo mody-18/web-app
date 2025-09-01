@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Thank You | R&Z Massage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <!-- No-JS fallback: go home in 5s -->
+    <meta http-equiv="refresh" content="5;url=index.html" />
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      main {
+        flex: 1; /* take up remaining space */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+      }
+      main h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+      main p {
+        max-width: 520px;
+        margin-bottom: 1.5rem;
+      }
+      .timer {
+        opacity: 0.7;
+      }
+      footer {
+        text-align: center;
+        padding: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header" data-solid="true">
+      <a href="index.html" class="logo">
+        <img src="logo.png" alt="R&Z Massage Logo" />
+      </a>
+    </header>
+
+    <main>
+      <h1>Thank You!</h1>
+      <p>
+        Your message has been sent successfully. I’ll get back to you as soon as
+        possible.
+      </p>
+      <p class="timer">
+        Returning to the homepage in <span id="seconds">5</span>…
+      </p>
+      <a href="index.html" class="btn">Go now</a>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 R&Z Massage. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+      // JS redirect + live countdown
+      let s = 5;
+      const el = document.getElementById("seconds");
+      const tick = () => {
+        s -= 1;
+        if (el) el.textContent = s;
+        if (s <= 0) window.location.href = "index.html";
+      };
+      setTimeout(() => {
+        const id = setInterval(() => {
+          tick();
+          if (s <= 0) clearInterval(id);
+        }, 1000);
+      }, 0);
+    </script>
+  </body>
+</html>

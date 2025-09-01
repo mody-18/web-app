@@ -153,6 +153,20 @@ img {
   transform: translateX(0);
 }
 
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 998; /* mobile menu is 999 in your CSS */
+}
+.menu-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 /* Hero */
 .hero {
   position: relative;
