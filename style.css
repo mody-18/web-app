@@ -73,6 +73,13 @@ img {
   font-weight: 600;
   letter-spacing: 0.5px;
 }
+
+.logo img {
+  height: 60px; /* adjust to fit your header */
+  width: auto; /* keeps proportions */
+  display: block;
+}
+
 .nav-links {
   display: flex;
   gap: clamp(16px, 3vw, 28px);
@@ -465,4 +472,8 @@ footer {
 
 .contact-links div a:hover {
   color: #a87c5c; /* pick your brand accent */
+}
+
+textarea {
+  resize: none;
 }
