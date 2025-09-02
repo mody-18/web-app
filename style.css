@@ -491,3 +491,23 @@ footer {
 textarea {
   resize: none;
 }
+
+/* Desktop only */
+
+@media (min-width: 900px) {
+  .about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start; /* top-align both */
+    gap: 2rem;
+  }
+  .about img {
+    grid-column: 1;
+  }
+  .about-text {
+    grid-column: 2; /* sits to the right of the image */
+    align-self: start; /* lock to the top of its cell */
+    justify-self: start; /* left-align within the column */
+    text-align: left;
+  }
+}
